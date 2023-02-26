@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block otpverify %}
+        <!-- Internet Connection -->
+        <div class="alert" id="checkOnline"></div>
+        <!-- Page loader -->
+        {% include 'inc/page-loader.html' %}
+        <!-- page content -->
+        <main class="main-content flex-shrink-0">
+            <section class="verifi-wrapper">
+                <div class="container">
+                    <div class="row align-self-center justify-content-center">
+                        <div class="col col-12 col-sm-9 col-md-7 col-lg-6 col-xl-5 align-self-center text-center mx-auto">
+                            <div class="text-center py-3">  
+                                <img src="{% static 'accounts/img/login.svg' %}" alt="image">
+                            </div>
+                            <div class="mb-4">
+                                <p class="fs-16 text-white">پیامکی حاوی کد تایید برای شما ارسال شد لطفا آن را وارد کنید</p>
+                            </div>
+                        <form action="" method="post">
+                            {% csrf_token %}   
+                             {{form.as_p}}       
+                            <div class="col text-center">
+                                <button type="submit" class="btn btn-outline-light rounded-pill w-100">  تایید  </button>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- template js files -->
+        {% include 'inc/jstemplates.html' %}
+
+        {% endblock otpverify %}

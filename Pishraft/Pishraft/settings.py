@@ -38,6 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
+    'accounts.apps.AccountsConfig',
+    'profiles.apps.ProfilesConfig',
+    'storages',
+    'django_celery_beat',
 ]
 
 MIDDLEWARE = [
@@ -106,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'
 
 USE_I18N = True
 
@@ -118,10 +122,32 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / 'static',
 ]
 
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+    
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+AUTH_USER_MODEL = 'accounts.User'
+
+KAVENEGAR_APIKEY = '4E4C436A7052526761472B58565872425678366357577478777A72785248746A715A77476857596D75646F3D'
+
+
+#arvan cloud
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_ACCESS_KEY_ID = 'd163604b-af4f-4c7a-bc32-25a024d3de44'
+AWS_SECRET_ACCESS_KEY = '90d4b628b6aedebf33ccc847475fa02aa42e5e4d'
+AWS_S3_ENDPOINT_URL = 'https://s3.ir-thr-at1.arvanstorage.ir'
+AWS_STORAGE_BUCKET_NAME = 'pishraftrayane'
+AWS_S3_FILE_OVERWRITE = False
+AWS_SERVICE_NAME = 's3'
+AWS_LOCAL_STORAGE = f'{BASE_DIR}/aws/'

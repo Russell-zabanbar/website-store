@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    
+
+    
+        <!-- Internet Connection -->
+        <div class="alert" id="checkOnline"></div>
+        <!-- Page loader -->
+        <div id="loader-page">
+            <div class="loader" id="line">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+        </div>
+        <!-- page content -->
+        <main class="main-content flex-shrink-0">
+            <!-- Header Area-->
+            
+            <!-- Footer -->
+        <div class="footer-area">
+            <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+               
+                
+                <li>
+                   <a href="{% url 'accounts:register' %}"> <i class="fa fa-user"></i> <span>ورود | ثبت نام</span> </a>
+                </li> 
+                
+            </ul>
+        </div>
+        </main>
+
+        <!-- template js files -->
+        {% include 'inc/jstemplates.html' %}
+        <!-- Progressive Web App -->
+        <script src="js/pwa.js"></script>
+        {% endblock content %}

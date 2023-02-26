@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+        
+{% block title %}  پروفایل کاربر  {% endblock title %}
+            {% block content %}
+        <!-- Internet Connection -->
+        <div class="alert" id="checkOnline"></div>
+       {% include 'inc/page-loader.html' %}
+        <!-- Menu Nav -->
+       {% include 'inc/menu-nav.html' %}
+        <!-- page content -->
+        <main class="main-content flex-shrink-0">
+            <!-- Header Area-->
+            <div class="header-area">
+                <div class="container d-flex h-100 align-items-center justify-content-between pe-0">
+                        <div class="header-logo col">
+                        <a class="navbar-brand" href="home.html">
+                            <img src="img/logo.png" class="navbar-brand-img" alt="logo">
+                        </a>
+                        </div>
+                        <div class="col-auto me-2">
+                            <a class="navbar-toggler text-color1" href="edit-profile.html"><i class="fa fa-pen"></i></a>
+                        </div>
+                        <div class="col-auto">
+                        <button class="btn navbar-toggler navbar-menu-toggler icon-boxed rounded-start"><i class="fa fa-bars"></i></button>
+                        </div>
+                    </div>
+            </div>
+                <div class="content-wrapper">
+                    <!-- Profile Wrapper-->
+                    
+                    <section class="profile-wrapper">
+                        <div class="container">
+                            <div class="align-items-center p-4">
+                                {% for profile in profile_user %}
+                                <div class="thumbnail text-center">
+                                    <img src="{{ profile.avatar.url }}" alt="">
+                                    
+                                    <h3 class="my-3">{{ profile.full_name }}</h3>
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="profile-content">
+                                <div class="flex-wrap justify-content-between align-items-center">
+                                    <div class="profile-info">
+                                        <i class="fa fa-user"></i>
+                                        <span>نام کاربری</span>
+                                        <strong>{{ profile.full_name}}</strong>
+                                    </div>
+                                    <div class="profile-info my-4">
+                                        <i class="fa fa-phone"></i>
+                                        <span>تلفن همراه</span>
+                                        <strong>{{profile.phone_number}}</strong>
+                                    </div>
+                                    <div class="profile-info">
+                                        <i class="fa fa-envelope"></i>
+                                        <span>تلفن فروشگاه</span>
+                                        <strong>{{ profile.store_number }} </strong>
+                                    </div>
+                                    <div class="profile-info my-4">
+                                        <i class="fa fa-map-marker-alt"></i>
+                                        <span>آدرس فروشگاه</span>
+                                        <strong>{{ profile.addresses}}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                 
+          <!-- Footer  -->
+          <div class="footer-area">
+            <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+                <li class="active">
+                    <a href="{% url 'home:home' profile.id %}"> <i class="fa fa-home"></i> <span>خانه</span> </a>
+                </li>
+                {% endfor %} 
+                <li>
+                    <a href="my-order.html"> <i class="fa fa-shopping-bag"></i> <span>محصولات‌</span> </a>
+                </li>
+                <li>
+                    <a href="cart.html"> <i class="fa fa-shopping-cart"></i> <span>خرید</span> </a>
+                </li> 
+            </ul>
+        </div>
+        </main>
+        
+                <!-- template js files -->
+{% include 'inc/jstemplates.html' %}
+{% endblock content %}

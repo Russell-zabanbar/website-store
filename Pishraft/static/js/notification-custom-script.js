@@ -499,16 +499,16 @@ $(function () {
                     msg: 'Lorem ipsum dolor sit amet against apennine any created, spend loveliest, building stripes.'
                 });
             });
-            Lobibox.notify('default', {
-                delay: 10000,
-                sound: true,
-                title: 'به مونیکس خوش آمدید!',
-                showAfterLoad: true,    
-                position: 'top right',
-                rounded:true,
-                msg: "شما می توانید این وب سایت را به دسکتاپ خود اضافه کنید  <b>صفحه اصلی</b> دسترسی سریع و مرور سریعتر."
+            // Lobibox.notify('default', {
+            //     delay: 10000,
+            //     sound: true,
+            //     title: 'به مونیکس خوش آمدید!',
+            //     showAfterLoad: true,    
+            //     position: 'top right',
+            //     rounded:true,
+            //     msg: "شما می توانید این وب سایت را به دسکتاپ خود اضافه کنید  <b>صفحه اصلی</b> دسترسی سریع و مرور سریعتر."
                 
-                });
+            //     });
         })();
         //------------------------------------------------------------------------------
         //                Notification no delay

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+    {% block login %}
+        <!-- Internet Connection -->
+        <div class="alert" id="checkOnline"></div>
+        <!-- Page loader -->
+        {% include 'inc/page-loader.html' %}
+             <!-- Menu Nav -->
+             {% include 'inc/menu-nav.html' %}
+        <!-- page content -->
+        <main class="main-content flex-shrink-0">
+            <!-- Header Area-->
+            <div class="header-area">
+                <div class="container d-flex h-100 align-items-center justify-content-between pe-0">
+                        <div class="header-logo col">
+                        <a class="navbar-brand" href="home.html">
+                            <img src="{% static 'img/logo.png' %}" class="navbar-brand-img" alt="logo">
+                        </a>
+                        </div>
+                        <div class="col-auto">
+                        <button class="btn navbar-toggler navbar-menu-toggler icon-boxed rounded-start"><i class="fa fa-bars"></i></button>
+                        </div>
+                    </div>
+            </div>
+                <div class="content-wrapper">
+                    <div class="header-page">
+                        <div class="container">
+                            <div class="header-padding">
+                                <div class="text-center">
+                                    <img src="{% static 'accounts/img/login.svg' %}" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Login Wrapper-->
+                    <section class="login-wrapper p-3 mt-20">
+                        <div class="container">
+                            <div class="title-section align-items-center py-2">
+                                <h5>ثبت نام | ورود</h5>
+                                <p class="pt-3">به پیشرفت رایانه خوش آمدید برای  بهره مند شدن از تمام خدمات ما و ادامه ثبت سفارش و خرید لطفا شماره تماس خود را وارد کنید </p>
+                            </div>
+                            <form action="" method="post" novalidate>
+                                
+                                
+                                <div class="form-group">
+                                    {% csrf_token %}
+                                    {{form.as_p}}
+                                </div>
+                                <div class="form-group text-center">
+                                    <button type="submit" class="btn btn-primary rounded-pill w-100">ورود</button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </section>
+                </div>
+                <!-- Footer  -->
+   
+                <!-- template js files -->
+                {% include 'inc/jstemplates.html' %}
+                <!-- Progressive Web App 
+                <script src="js/pwa.js"></script> -->
+{% endblock login %}

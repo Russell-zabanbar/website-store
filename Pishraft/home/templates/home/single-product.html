@@ -1,0 +1,155 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}جزيیات محصول{% endblock title %}
+
+    {% block content %}
+        <!-- Internet Connection -->
+        <div class="alert" id="checkOnline"></div>
+        <!-- Page loader -->
+        {% include 'inc/page-loader.html' %}
+        <!-- page content -- >
+        <main class="main-content flex-shrink-0">
+             <!-- Header Area-->
+            <div class="header-area">
+                <div class="container d-flex h-100 align-items-center justify-content-between ps-0">
+                    <div class="col">
+                        <a href="home.html" class="btn navbar-toggler icon-boxed rounded-end"><i class="fa fa-chevron-right pe-1"></i></a>
+                        </div>
+                        <div class="col-auto me-2">
+                            <a class="btn-favorite text-color1 fs-20"><i class="fa fa-heart"></i></a>
+                        </div>
+                        <div class="col-auto">
+                            <a class="navbar-toggler text-color1"><i class="fa fa-share"></i></a>
+                        </div>
+                    </div>
+            </div>
+            <div class="content-wrapper">
+                 <!-- Product image slider -->
+            <section class="slider-section">
+                <div class="product-details-slider owl-carousel">
+                <div class="product-slide-image"> <img src="{{products.image.url}}" alt=""> </div>
+                <div class="product-slide-image"> <img src="{{products.image.url}}" alt=""> </div>
+
+                </div>
+            </section>
+            <!-- Product details -->
+            <section class="product-details p-3">
+                <div class="container">
+
+                    <h6 class="mt-2 mb-4">{{products.name}}</h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="price mt-1 mb-0 text-color1 fs-18 fw-bold"> {{products.price}} </p>
+                        <div class="product-quantity">
+                            <form action="#">
+                                <div class="counter-wrapper d-flex align-items-center">
+                                  <button class="minus-btn"><i class="fa fa-minus"></i></button>
+                                  <input type="text" class="form-control mx-2" value="1" min="1">
+                                  <button class="plus-btn"><i class="fa fa-plus"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="accordion mt-4" id="accordionExample">
+                        <!-- Product Description -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                توضیحات محصول
+                            </button>
+                          </h2>
+                          <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <p>
+                                    {{products.description}}
+                                </p>
+                            </div>
+                          </div>
+                        </div>
+                         <!-- Product Specifications -->
+                         <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingTwo">
+                              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                مشخصات فنی
+                              </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                              <div class="accordion-body">
+                                <div class="product-specification">
+                                    <ul>
+                                        <li> <i class="fa fa-check pe-1"></i> دوربین فیلمبرداری فول</li>
+                                        <li> <i class="fa fa-check pe-1"></i> ضبط ویدئو دوگانه</li>
+                                        <li> <i class="fa fa-check pe-1"></i>عملیات باتری را تایپ کنید</li>
+                                    </ul>
+                                </div>
+                                </div>
+                            </div>
+                          </div>
+                        <!-- Review Wrapper -->
+                        <div class="accordion-item">
+                          <h2 class="accordion-header" id="headingThree">
+                                             </div>    
+                                        </div>         
+                                    </form>   
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </section> 
+            <!-- Related Products -->
+            <section class="featured-products mt-20">
+            <div class="container">
+                <div class="title-section d-flex align-items-center justify-content-between">
+                    <h6>محصولات مرتبط</h6>
+                    <a href="catagory.html" class="btn btn-darkblue text-color1 fw-bold">بیشتر </a>
+                </div>
+                <div class="featured-products-area owl-carousel">
+                    <div class="product-item-card p-2">
+                        <a href="single-product.html">
+                            <img src="img/product/product-7.jpg" alt="image">
+                        </a>
+                        <div class="products-content px-2">
+                            <span class="product-title fw-bold">اسپیکر 2022</span>
+                            <p class="price mt-1 mb-0"> 9000 تومان </p>
+                        </div>
+                    </div>
+                    <div class="product-item-card p-2">
+                        <a href="single-product.html">
+                            <img src="img/product/product-8.jpg" alt="image">
+                        </a>
+                        <div class="products-content px-2">
+                            <span class="product-title fw-bold"> کنترل کننده</span>
+                            <p class="price mt-1 mb-0">  8000 تومان   </p>
+                        </div>
+                    </div>
+                    <div class="product-item-card p-2">
+                        <a href="single-product.html">
+                            <img src="img/product/product-9.jpg" alt="image">
+                        </a>
+                        <div class="products-content px-2">
+                            <span class="product-title fw-bold">ماوس بی سیم</span>
+                            <p class="price mt-1 mb-0">  8000 تومان   </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+            </div>
+             <!-- Footer  -->
+             
+            <div class="footer-btn-item">
+                <div class="container h-100">
+                    <div class="row h-100 align-items-center justify-content-between">
+                        <div class="col text-center">
+                            <a href="cart.html" class="btn w-50 btn-primary" data-color="blue">افزودن به سبد خرید</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+     
+                <!-- template js files -->
+            {% include 'inc/jstemplates.html' %}
+
+                {% endblock content %}

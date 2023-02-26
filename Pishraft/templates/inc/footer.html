@@ -1,0 +1,24 @@
+{% load static %}
+
+<div class="footer-area">
+    <ul class="h-100 d-flex align-items-center justify-content-between ps-0">
+        <li class="active">
+            {% for user in users %}
+            <a href="{% url 'home:home' user.id %}"> <i class="fa fa-home"></i> <span> خانه</span> </a>
+        </li>
+        <li>
+            <a href="my-order.html"> <i class="fa fa-shopping-bag"></i> <span>محصولات‌</span> </a>
+        </li>
+        <li>
+            <a href="cart.html"> <i class="fa fa-heart"></i> <span> نشان شده ها</span></a>
+        </li>
+            <li>
+                
+            <a href="{% url 'user_profiles:profile' user.id %} "> <i class="fa fa-user"></i> <span>پروفایل</span> </a>
+           
+            </li>
+                {% endfor %}
+
+    </ul>
+</div>
+</main>

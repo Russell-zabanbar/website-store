@@ -1512,6 +1512,7 @@ border-radius: 12px;
   margin-right: 5px;
   font-weight: normal;
 }
+
 /*===== Invoice Styles =====*/
 .invoice-wrapper{
   color: var(--color6);
@@ -1556,6 +1557,9 @@ border-radius: 12px;
 }
 .demo-wrapper ul li img{
   max-height: 45px;
+}
+.discriptions{
+  color: #7b17ff;
 }
 .shape-one:before {
   content: '';
